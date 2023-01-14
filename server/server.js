@@ -12,11 +12,12 @@ dotenv.config();
 App.use(bodyParser.json());
 
 const configuration = new Configuration({
-    organization: "org-9pHkKveQUrTQgOA4zVuDnx02",
+    // organization: "org-9pHkKveQUrTQgOA4zVuDnx02",
     apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
+
 
 App.use(cors());
 App.use(express.json());
@@ -30,7 +31,6 @@ App.get('/' , async (req , res )=>{
 App.post('/' , async (req , res)=>{
     try{
         const prompt = req.body.prompt;
-
         const response = await openai.createCompletion({
             model: "text-davinci-003",
             prompt: `${prompt}`,

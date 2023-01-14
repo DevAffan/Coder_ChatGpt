@@ -14,7 +14,7 @@ function loader(element){
     element.textContent += '.';
 
     if(element.textContent === '....'){
-      element.textContent ='';
+      element.textContent = '';
     }
   } , 300);
 }
@@ -67,7 +67,7 @@ const handleSubmit = async (e) => {
   const data = new FormData(form);
 
   //user's chat
-  chatContainer.innerHTML += chatStripe(false , data.get(`prompt`));
+  chatContainer.innerHTML += chatStripe(false , data.get('prompt'));
   // console.log(chatContainer.innerHTML);
 
   form.reset();
@@ -95,8 +95,8 @@ const handleSubmit = async (e) => {
       prompt: data.get('prompt')
     }),
   });
- clearInterval(loader);
- messageDiv.innerHTML = '';
+ clearInterval(loadInterval);
+ messageDiv.innerHTML = ' ';
 
  if(response.ok){
     const data = await response.json();
@@ -118,3 +118,4 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 });
+
