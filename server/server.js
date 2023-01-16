@@ -20,6 +20,7 @@ const openai = new OpenAIApi(configuration);
 
 
 App.use(cors());
+
 App.use(express.json());
 
 App.get('/' , async (req , res )=>{
