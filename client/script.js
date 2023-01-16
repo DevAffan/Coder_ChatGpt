@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
 
   //fetch realtime data
 
-  const response = await fetch('http://localhost:4050/', {
+  const response = await fetch('https://gpt-server-production.up.railway.app/', {
     method: 'POST',
     headers:{
       'Content-type': 'application/json'

@@ -51,7 +51,7 @@ App.post('/' , async (req , res)=>{
     }
 })
 
-const port = 4050;
+const port = 3000;
 
 App.listen(port , ()=> console.log(`server is running on port: http://localhost:${port}`));
 
